@@ -3,4 +3,5 @@ TwoCents::Application.routes.draw do
 
   resources :users, only: [:create]
   resource :dashboard, only: [:show]
+  resources :discussions, only: [:new]
 end

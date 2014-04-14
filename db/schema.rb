@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414194206) do
+ActiveRecord::Schema.define(version: 20140414213454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "discussions", force: true do |t|
+    t.integer  "user_id",      null: false
+    t.string   "name",         null: false
+    t.integer  "content_id",   null: false
+    t.string   "content_type", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "discussions", ["content_id", "content_type"], name: "index_discussions_on_content_id_and_content_type", using: :btree
+  add_index "discussions", ["user_id"], name: "index_discussions_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.datetime "created_at",                     null: false
