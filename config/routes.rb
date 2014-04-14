@@ -1,5 +1,5 @@
 TwoCents::Application.routes.draw do
-  root 'welcomes#index'
+  root 'welcomes#show'
 
   resources :users, only: [:create]
   resource :dashboard, only: [:show]
