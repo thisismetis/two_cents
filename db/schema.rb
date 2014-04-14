@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414201455) do
+ActiveRecord::Schema.define(version: 20140414210048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "discussions", force: true do |t|
-    t.integer  "user_id"
-    t.string   "name"
+    t.integer  "user_id",      null: false
+    t.string   "name",         null: false
     t.integer  "content_id"
     t.string   "content_type"
     t.datetime "created_at"
