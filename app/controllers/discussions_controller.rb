@@ -5,8 +5,6 @@ class DiscussionsController < ApplicationController
 
   def create
     @discussion = current_user.discussions.create(discussion_params)
-    @discussion.photo = params[:discussion][:photo]
-    @discussion.save
     redirect_to @discussion
   end
 
@@ -18,6 +16,6 @@ class DiscussionsController < ApplicationController
   private
 
   def discussion_params
-    params.require(:discussion).permit(:name)
+    params.require(:discussion).permit(:name, :photo)
   end
 end
