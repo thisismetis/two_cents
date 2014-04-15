@@ -6,10 +6,14 @@
       <%= form.hidden_field :username, value: current_user.username %>
       <%= form.submit "Comment" %>
     <% end %>
+  <% end %>
+  You are commenting as:
+  <% if signed_in? %>
+    <%= current_user.username %>
   <% else %>
     <%= form_for :guest, url: discussion_username_path(@discussion) do |form| %>
-      <%= form.text_field :username, placeholder: "Enter your chat username" %>
-      <%= form.submit "Submit" %>
+      <%= form.text_field :username, value: current_user.username %>
+      <%= form.submit "Change" %>
     <% end %>
   <% end %>
 </div>
