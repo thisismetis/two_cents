@@ -7,4 +7,7 @@ TwoCents::Application.routes.draw do
     resource :username, only: [:create]
   end
 
+  resource :session, only: [:create]
+  delete '/sign_out' => 'sessions#destroy', as: nil
+
 end
