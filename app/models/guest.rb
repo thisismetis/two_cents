@@ -1,11 +1,7 @@
 class Guest
-  attr_reader :name
+  attr_reader :username
 
-  def initialize(name="")
-    @name = name
-  end
-
-  def username
-    name
+  def initialize(username="")
+    @username = username
   end
 end
