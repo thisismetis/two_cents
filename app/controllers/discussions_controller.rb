@@ -9,10 +9,14 @@ class DiscussionsController < ApplicationController
   end
 
   def show
-    @discussion = Discussion.find(params[:id])
+    @discussion = find_discussion
   end
 
   private
+
+  def find_discussion
+    Discussion.find(params[:id])
+  end
 
   def discussion_params
     params.require(:discussion).permit(:name)
