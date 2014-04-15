@@ -9,8 +9,9 @@ class DiscussionsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
     @discussion = Discussion.find(params[:id])
+    @comments = @discussion.comments
+    @comment = Comment.new
   end
 
   private
