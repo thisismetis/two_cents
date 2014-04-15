@@ -9,6 +9,7 @@ class DiscussionsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @discussion = Discussion.find(params[:id])
   end
 
