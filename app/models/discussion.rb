@@ -6,7 +6,7 @@ class Discussion < ActiveRecord::Base
   validates :user, presence: true
 
   def to_param
-    Base64.encode64(self.id.to_s)
+    Base64.encode64(id.to_s)
   end
 
   def self.find(id)
