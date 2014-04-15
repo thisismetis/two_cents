@@ -1,8 +1,16 @@
 <%= @discussion.name %>
 <div id="comment-form">
-  <%= form_for [@discussion, @comment] do |form| %>
-    <%= form.text_field :body, placeholder: "Enter your comment here" %>
-    <%= form.submit "Comment" %>
+  <% if current_user.username %>
+    <%= form_for [@discussion, @comment] do |form| %>
+      <%= form.text_field :body, placeholder: "Enter your comment here" %>
+      <%= form.hidden_field :username, value: current_user.username %>
+      <%= form.submit "Comment" %>
+    <% end %>
+  <% else %>
+    <%= form_for :guest, url: discussion_username_path(@discussion) do |form| %>
+      <%= form.text_field :username, placeholder: "Enter your chat username" %>
+      <%= form.submit "Submit" %>
+    <% end %>
   <% end %>
 </div>
 <div id="comments">
