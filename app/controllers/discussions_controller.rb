@@ -4,12 +4,15 @@ class DiscussionsController < ApplicationController
   end
 
   def create
-    discussion = current_user.discussions.create(discussion_params)
-    redirect_to discussion
+    @discussion = current_user.discussions.create(discussion_params)
+    @discussion.photo = params[:discussion][:photo]
+    @discussion.save
+    redirect_to @discussion
   end
 
   def show
     @discussion = Discussion.find(params[:id])
+    @photo = @discussion.photo
   end
 
   private

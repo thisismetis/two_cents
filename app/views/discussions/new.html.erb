@@ -1,4 +1,9 @@
-<%= form_for(@discussion) do |form| %>
-  <%= form.text_field :name, placeholder: "Name" %>
+<%= form_for @discussion, :html => { :multipart => true} do |form| %>
+  <p>
+    <%= form.text_field :name, placeholder: "Name of Discussion" %>
+  </p>
+  <p>
+    <%= form.file_field :photo %>
+  </p>
   <%= form.submit "Submit" %>
 <% end %>
