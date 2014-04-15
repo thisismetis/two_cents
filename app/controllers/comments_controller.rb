@@ -11,8 +11,10 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).
-      permit(:body).
-      merge(username: current_user.username)
+      permit(
+        :body,
+        :username
+      )
   end
 
   def find_discussion
