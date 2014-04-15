@@ -21,7 +21,6 @@ class ContentsController < ApplicationController
   def content_params
     params.require(:content).
       permit(
-        :media,
         :url
       )
   end

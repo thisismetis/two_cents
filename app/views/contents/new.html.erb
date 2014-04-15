@@ -1,14 +1,4 @@
 <%= form_for [@discussion, @content] do |form| %>
   <%= form.text_field :url, placeholder: "Media URL" %>
-  <%= form.radio_button :media, "Image" %>
-  <%= form.label :media, "Image", value: "image" %>
-  <%= form.radio_button :media, "Document" %>
-  <%= form.label :media, "Document", value: "document" %>
-  <%= form.radio_button :media, "Movie" %>
-  <%= form.label :media, "Movie", value: "movie" %>
-  <%= form.radio_button :media, "Music" %>
-  <%= form.label :media, "Music", value: "music" %>
-  <%= form.radio_button :media, "Code" %>
-  <%= form.label :media, "Code", value: "code" %>
   <%= form.submit "Add content" %>
 <% end %>
