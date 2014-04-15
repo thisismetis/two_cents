@@ -1,0 +1,4 @@
+<%= form_for [@discussion, @content] do |form| %>
+  <%= form.text_field :url, placeholder: "Media URL" %>
+  <%= form.submit "Add content" %>
+<% end %>
