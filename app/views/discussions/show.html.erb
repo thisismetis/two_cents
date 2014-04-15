@@ -1,1 +1,10 @@
 <%= @discussion.name %>
+<div id="comment-form">
+  <%= form_for [@discussion, @comment] do |form| %>
+    <%= form.text_field :body, placeholder: "Enter your comment here" %>
+    <%= form.submit "Comment" %>
+  <% end %>
+</div>
+<div id="comments">
+  <%= render @comments %>
+</div>
