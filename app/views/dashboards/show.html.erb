@@ -1,0 +1,13 @@
+<h2><%= current_user.username.capitalize %>'s Dashboard Page</h2>
+
+<div>
+  <h3>MY DISCUSSIONS</h3>
+</div>
+
+<% @discussions.each do |discussion| %>
+  <div>
+  <ul>
+    <li><%= link_to discussion.name, discussion_path(@discussion) %></li>
+  </ul>
+</div>
+<% end %>
