@@ -9,7 +9,7 @@ class DiscussionsController < ApplicationController
   end
 
   def show
-    @discussion = Discussion.find(params[:id])
+    @discussion = Discussion.find_by(token: params[:id])
     @comments = @discussion.comments
     @comment = Comment.new
     @photo = @discussion.photo
