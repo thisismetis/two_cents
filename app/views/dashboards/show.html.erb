@@ -4,10 +4,4 @@
   <h3>MY DISCUSSIONS</h3>
 </div>
 
-<% @discussions.each do |discussion| %>
-  <div>
-  <ul>
-    <li><%= link_to discussion.name, discussion_path(@discussion) %></li>
-  </ul>
-</div>
-<% end %>
+<%= render @discussions %>
