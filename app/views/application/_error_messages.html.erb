@@ -1,0 +1,8 @@
+<% if target.errors.full_messages.any? %>
+  <div>
+    <h3>Sign up was unsucessful for the following <%= target.errors.full_messages.count %> reasons: </h3>
+    <% target.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </div>
+<% end %>
