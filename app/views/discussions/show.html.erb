@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  var pusher = new Pusher('<%= ENV.fetch['PUSHER_KEY'] %>');
+  var pusher = new Pusher('<%= ENV.fetch('PUSHER_KEY') %>');
   var channel = pusher.subscribe('test_channel');
   channel.bind('my_event', function(comment) {
     template = comment.username;
