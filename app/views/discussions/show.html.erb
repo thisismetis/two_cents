@@ -21,16 +21,23 @@
       <%= form.submit "Comment" %>
     <% end %>
   <% end %>
-  You are commenting as:
-  <% if signed_in? %>
-    <%= current_user.username %>
-  <% else %>
-    <%= form_for :guest, url: discussion_username_path(@discussion) do |form| %>
-      <%= form.text_field :username, value: current_user.username %>
-      <%= form.submit "Change" %>
-    <% end %>
-  <% end %>
 </div>
+You are commenting as:
+<% if signed_in? %>
+  <%= current_user.username %>
+<% else %>
+  <span id="comment-username"><%= current_user.username %></span>
+  <% if current_user.username.nil? %>
+    <div id="comment-username-form">
+      <%= form_for :guest,
+        url: discussion_username_path(@discussion),
+        remote: true do |form| %>
+          <%= form.text_field :username, value: current_user.username %>
+          <%= form.submit "Change" %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
 <div id="comments">
   <%= render @comments %>
 </div>
