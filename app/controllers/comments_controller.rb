@@ -18,6 +18,6 @@ class CommentsController < ApplicationController
   end
 
   def find_discussion
-    Discussion.find(params[:discussion_id])
+    Discussion.find_by(token: params[:discussion_id])
   end
 end
