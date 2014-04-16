@@ -32,8 +32,8 @@ You are commenting as:
       <%= form_for :guest,
         url: discussion_username_path(@discussion),
         remote: true do |form| %>
-        <%= form.text_field :username, value: current_user.username %>
-        <%= form.submit "Change" %>
+          <%= form.text_field :username, value: current_user.username %>
+          <%= form.submit "Change" %>
       <% end %>
     </div>
   <% end %>
