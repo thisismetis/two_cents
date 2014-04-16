@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     super || Guest.new(cookies[:username])
   end
 
-  def process_update(subject)
-    PushUpdate.new(subject).push_update
+  def process_comment(comment)
+    CommentPush.new(comment).push_comment_update
   end
 end
