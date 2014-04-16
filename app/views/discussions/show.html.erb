@@ -1,7 +1,7 @@
 <script type="text/javascript">
   var pusher = new Pusher('<%= ENV.fetch('PUSHER_KEY') %>');
   var channel = pusher.subscribe('comments_updater');
-  channel.bind('comment_event', function(comment) {
+  channel.bind('discussion_<%= @discussion.token %>', function(comment) {
     template = comment.username;
     template += " said: ";
     template += comment.body;

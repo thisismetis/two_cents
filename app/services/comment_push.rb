@@ -5,7 +5,8 @@ class CommentPush
 
   def push_comment_update
     if comment.valid?
-      Pusher['comments_updater'].trigger('comment_event',
+      Pusher['comments_updater'].trigger(
+        "discussion_#{comment.discussion.token}",
         username: comment.username,
         body: comment.body,
         created_at: comment.created_at
