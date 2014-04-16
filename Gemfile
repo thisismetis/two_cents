@@ -9,6 +9,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'clearance'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git" 
+gem 'unicorn-rails'
+gem 'pusher'
 
 group :doc do
   gem 'sdoc', require: false
@@ -18,5 +20,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'bullet'
+  gem 'dotenv-rails'
 end
 

@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def current_user
     super || Guest.new(cookies[:username])
   end
+
+  def process_comment(comment)
+    CommentPush.new(comment).push_comment_update
+  end
 end

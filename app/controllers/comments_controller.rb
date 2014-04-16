@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
-  respond_to :html
+  respond_to :js, :html
 
   def create
     discussion = find_discussion
     comment = discussion.comments.create(comment_params)
-    respond_with comment, location: discussion
+    process_comment(comment)
   end
 
   private
