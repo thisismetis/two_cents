@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
 
   def create
     discussion = find_discussion
-    discussion.comments.create(comment_params)
+    comment = discussion.comments.create(comment_params)
+    process_update(comment)
   end
 
   private
