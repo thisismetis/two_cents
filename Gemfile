@@ -9,7 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'clearance'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git" 
-gem 'puma'
+gem 'unicorn-rails'
 gem 'pusher'
 
 group :doc do
