@@ -1,4 +1,4 @@
-<%= form_for @content_discussion_form, html: { multipart: true } do |form| %>
+<%= form_for @content_discussion_form do |form| %>
   <div>
     <%= form.hidden_field :type, value: "Image" %>
   </div>
@@ -7,36 +7,6 @@
   </div>
   <div>
     <%= form.file_field :subject %>
-  </div>
-  <%= form.submit "Submit" %>
-<% end %>
-
-<%= form_for @content_discussion_form, html: { multipart: true } do |form| %>
-  <div>
-    <%= form.text_field :name, placeholder: "PDF Name" %>
-  </div>
-  <div>
-    <%= form.file_field :pdf %>
-  </div>
-  <%= form.submit "Submit" %>
-<% end %>
-
-<%= form_for @content_discussion_form, html: { multipart: true } do |form| %>
-  <div>
-    <%= form.text_field :name, placeholder: "Audio Name" %>
-  </div>
-  <div>
-    <%= form.file_field :audio %>
-  </div>
-  <%= form.submit "Submit" %>
-<% end %>
-
-<%= form_for @content_discussion_form, html: { multipart: true } do |form| %>
-  <div>
-    <%= form.text_field :name, placeholder: "Video Name" %>
-  </div>
-  <div>
-    <%= form.file_field :video %>
   </div>
   <%= form.submit "Submit" %>
 <% end %>

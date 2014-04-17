@@ -19,5 +19,5 @@
 .env
 
 # Ignore images being uploaded 
-public/system/* 
+/public/system/
 

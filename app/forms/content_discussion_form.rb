@@ -8,14 +8,14 @@ class ContentDiscussionForm
     :user
   )
 
-  def persist!    
+  def persist!
     content = content_type.create(subject: subject)
     content.create_discussion(name: name, user: user)
   end
 
   private
 
-  def content_type 
+  def content_type
     type.constantize
-  end  
+  end
 end

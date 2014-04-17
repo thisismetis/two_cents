@@ -1,5 +1,4 @@
 class ContentDiscussionFormsController < ApplicationController
-
   def create
     content_discussion_form = ContentDiscussionForm.new(form_params)
     discussion = content_discussion_form.persist!
@@ -17,7 +16,4 @@ class ContentDiscussionFormsController < ApplicationController
         ).
       merge(user: current_user)
   end
-
-
-
 end
