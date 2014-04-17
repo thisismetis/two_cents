@@ -90,6 +90,9 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.9.2)
+    neat (1.5.0)
+      bourbon (>= 2.1)
+      sass (>= 3.2)
     pg (0.17.1)
     polyglot (0.3.4)
     pusher (0.12.0)
@@ -169,6 +172,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 1.2)
   jquery-rails
+  neat
   paperclip!
   pg
   pusher
