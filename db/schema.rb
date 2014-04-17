@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416173236) do
+ActiveRecord::Schema.define(version: 20140417155348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,15 +27,24 @@ ActiveRecord::Schema.define(version: 20140416173236) do
   add_index "comments", ["discussion_id"], name: "index_comments_on_discussion_id", using: :btree
 
   create_table "discussions", force: true do |t|
-    t.string   "name",               null: false
-    t.integer  "user_id",            null: false
+    t.string   "name",         null: false
+    t.integer  "user_id",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.string   "token",              null: false
+    t.string   "token",        null: false
+    t.string   "content_type"
+    t.integer  "content_id"
+  end
+
+  add_index "discussions", ["content_id", "content_type"], name: "index_discussions_on_content_id_and_content_type", using: :btree
+
+  create_table "images", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "subject_file_name"
+    t.string   "subject_content_type"
+    t.integer  "subject_file_size"
+    t.datetime "subject_updated_at"
   end
 
   create_table "users", force: true do |t|

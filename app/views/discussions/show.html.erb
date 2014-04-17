@@ -42,4 +42,6 @@ You are commenting as:
   <% end %>
 </div>
 
-<%= image_tag @discussion.photo.url(:medium) %>
+<div id="content">
+  <%= render @discussion.content %> 
+</div>

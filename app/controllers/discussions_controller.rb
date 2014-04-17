@@ -1,6 +1,7 @@
 class DiscussionsController < ApplicationController
+
   def new
-    @discussion = Discussion.new
+    @content_discussion_form = ContentDiscussionForm.new
   end
 
   def create
@@ -12,12 +13,13 @@ class DiscussionsController < ApplicationController
     @discussion = Discussion.find_by(token: params[:id])
     @comments = @discussion.comments.recent
     @comment = Comment.new
-    @photo = @discussion.photo
+    @content = @discussion.content
   end
 
   private
 
   def discussion_params
-    params.require(:discussion).permit(:name, :photo)
+    params.require(:discussion).permit(:name)
   end
+
 end

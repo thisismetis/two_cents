@@ -1,9 +1,12 @@
-<%= form_for @discussion, html: { multipart: true } do |form| %>
+<%= form_for @content_discussion_form do |form| %>
   <div>
-    <%= form.text_field :name, placeholder: "Name of Discussion" %>
+    <%= form.hidden_field :type, value: "Image" %>
   </div>
   <div>
-    <%= form.file_field :photo %>
+    <%= form.text_field :name, placeholder: "Discussion Name" %>
+  </div>
+  <div>
+    <%= form.file_field :subject %>
   </div>
   <%= form.submit "Submit" %>
 <% end %>
