@@ -8,19 +8,13 @@
     template += " ";
     template += moment(comment.created_at).fromNow();
     template += "\<br\>"
-    $("#comments").prepend(template);
+    $("#comments").append(template);
   });
 </script>
 
 <%= @discussion.name %>
-<div id="comment-form">
-  <% if current_user.username %>
-    <%= form_for [@discussion, @comment], remote: true do |form| %>
-      <%= form.text_field :body, placeholder: "Enter your comment here" %>
-      <%= form.hidden_field :username, value: current_user.username %>
-      <%= form.submit "Comment" %>
-    <% end %>
-  <% end %>
+<div id="comments">
+  <%= render @comments %>
 </div>
 You are commenting as:
 <% if signed_in? %>
@@ -38,8 +32,14 @@ You are commenting as:
     </div>
   <% end %>
 <% end %>
-<div id="comments">
-  <%= render @comments %>
+<div id="comment-form">
+  <% if current_user.username %>
+    <%= form_for [@discussion, @comment], remote: true do |form| %>
+      <%= form.text_field :body, placeholder: "Enter your comment here" %>
+      <%= form.hidden_field :username, value: current_user.username %>
+      <%= form.submit "Comment" %>
+    <% end %>
+  <% end %>
 </div>
 
 <%= image_tag @discussion.photo.url(:medium) %>
