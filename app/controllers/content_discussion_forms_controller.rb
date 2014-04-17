@@ -1,7 +1,7 @@
 class ContentDiscussionFormsController < ApplicationController
   def create
     content_discussion_form = ContentDiscussionForm.new(form_params)
-    discussion = content_discussion_form.persist!
+    discussion = content_discussion_form.persist
     redirect_to discussion
   end
 
