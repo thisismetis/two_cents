@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require moment.min
+//= require content_form
 //= require_tree .

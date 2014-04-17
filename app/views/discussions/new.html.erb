@@ -1,3 +1,9 @@
+<button class="change-type" data-type="Image">Image Upload</button>
+<button class="change-type" data-type="Document">Document Upload</button>
+<button class="change-type" data-type="Code">Code Upload</button>
+<button class="change-type" data-type="Video">Video Upload</button>
+<button class="change-type" data-type="Audio">Audio Upload</button>
+
 <%= form_for @content_discussion_form do |form| %>
   <div>
     <%= form.hidden_field :type, value: "Image" %>
@@ -5,7 +11,7 @@
   <div>
     <%= form.text_field :name, placeholder: "Discussion Name" %>
   </div>
-  <div>
+  <div id="content-form-subject">
     <%= form.file_field :subject %>
   </div>
   <%= form.submit "Submit" %>
