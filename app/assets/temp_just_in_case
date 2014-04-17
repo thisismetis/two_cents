@@ -1,0 +1,30 @@
+
+rt "bourbon";
+@import "bitters/bitters";
+@import "neat";
+
+#nav {
+  color: #f8f6f6;
+  height: 40px;
+  width:  100%;
+  background-color: #343434;
+  vertical-align: initial;
+
+  a:link {
+    color: #f8f6f6;
+    padding: 0px 50px;
+  }
+
+  a:visited {
+    color: #f8f6f6;
+  }
+
+  a:hover {
+    color: white;
+  }
+}
+
+body {
+  background-color: #f8f6f6;
+}
+
