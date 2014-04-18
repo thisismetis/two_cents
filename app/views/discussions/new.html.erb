@@ -14,7 +14,11 @@
     <%= form.text_field :name, placeholder: "Discussion Name" %>
   </div>
   <div id="content-form-subject">
-    <%= form.file_field :subject %>
+    <% if @discussion_form.type == "Code" || @discussion_form.type == "Video" %>
+      <%= form.text_field :subject %>
+    <% else %>
+      <%= form.file_field :subject %>
+    <% end %>
   </div>
   <%= form.submit "Submit" %>
 <% end %>
