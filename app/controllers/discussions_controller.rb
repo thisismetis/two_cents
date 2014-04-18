@@ -1,12 +1,9 @@
 class DiscussionsController < ApplicationController
+  respond_to :html
 
   def new
-    @content_discussion_form = ContentDiscussionForm.new
-  end
-
-  def create
-    @discussion = current_user.discussions.create(discussion_params)
-    redirect_to @discussion
+    @discussion_form = DiscussionForm.new
+    @content = @discussion_form
   end
 
   def show
@@ -16,7 +13,23 @@ class DiscussionsController < ApplicationController
     @content = @discussion.content
   end
 
+  def create
+    @discussion_form = DiscussionForm.new(form_params)
+    @content = @discussion_form.persist
+    respond_with @content, location: @content.discussion
+  end
+
   private
+
+  def form_params
+    params.require(:discussion_form).
+      permit(
+        :name,
+        :type,
+        :subject
+        ).
+      merge(user: current_user)
+  end
 
   def discussion_params
     params.require(:discussion).permit(:name)
