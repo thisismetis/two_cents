@@ -4,6 +4,8 @@
 <button class="change-type" data-type="Video">Video Upload</button>
 <button class="change-type" data-type="Audio">Audio Upload</button>
 
+<%= render "file_upload_error_messages", content: @content %>
+
 <%= form_for @content_discussion_form do |form| %>
   <div>
     <%= form.hidden_field :type, value: "Image" %>

@@ -2,6 +2,7 @@ class DiscussionsController < ApplicationController
 
   def new
     @content_discussion_form = ContentDiscussionForm.new
+    @content = @content_discussion_form
   end
 
   def create

@@ -10,7 +10,12 @@ class ContentDiscussionForm
 
   def persist
     content = content_type.create(subject: subject)
-    content.create_discussion(name: name, user: user)
+    if content.valid?
+      content.create_discussion(name: name, user: user)
+      content
+    else
+      content
+    end
   end
 
   private

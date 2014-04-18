@@ -1,0 +1,10 @@
+<% if content.errors.any? %>
+  <div class="error-messages">
+    Could not save for the following reasons:
+    <ul>
+      <% content.errors[:subject_custom_errors].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
