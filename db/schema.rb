@@ -78,4 +78,10 @@ ActiveRecord::Schema.define(version: 20140419033640) do
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
+  create_table "videos", force: true do |t|
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end
