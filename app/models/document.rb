@@ -20,11 +20,17 @@ class Document < ActiveRecord::Base
 
   def check_content_for_errors
     if !['application/pdf'].include?(subject_content_type)
-      errors.add(:subject_custom_errors, "'#{subject_file_name}' is not a valid document type")
+      errors.add(
+        :subject_custom_errors,
+        "'#{subject_file_name}' is not a valid document type"
+      )
     end
 
     if subject_file_size > 20971520
-      errors.add(:subject_custom_errors, "'#{subject_file_name}' is larger than 20MB.")
+      errors.add(
+        :subject_custom_errors,
+        "'#{subject_file_name}' is larger than 20MB."
+      )
     end
   end
 end
