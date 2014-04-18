@@ -12,14 +12,44 @@ class Document < ActiveRecord::Base
   validates_attachment :subject, presence: true
 
   validates_attachment_content_type :subject,
-    :content_type => %w(application/pdf)
+    content_type: %w(
+      application/pdf
+      application/msword
+      application/excel
+      application/vnd.ms-excel
+      application/x-excel
+      application/x-msexcel
+      text/plain
+      application/mspowerpoint
+      application/powerpoint
+      application/vnd.ms-powerpoint
+      application/x-mspowerpoint
+      application/x-iwork-keynote-sffkey
+      application/x-iwork-pages-sffpages
+      application/x-iwork-numbers-sffnumbers
+    )
 
   validate :check_content_for_errors
 
   private
 
   def check_content_for_errors
-    if !['application/pdf'].include?(subject_content_type)
+    if ![
+          'application/pdf',
+          'application/msword',
+          'application/excel',
+          'application/vnd.ms-excel',
+          'application/x-excel',
+          'application/x-msexcel',
+          'text/plain',
+          'application/mspowerpoint',
+          'application/powerpoint',
+          'application/vnd.ms-powerpoint',
+          'application/x-mspowerpoint',
+          'application/x-iwork-keynote-sffkey',
+          'application/x-iwork-pages-sffpages',
+          'application/x-iwork-numbers-sffnumbers'
+        ].include?(subject_content_type)
       errors.add(
         :subject_custom_errors,
         "'#{subject_file_name}' is not a valid document type"
