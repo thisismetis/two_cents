@@ -4,10 +4,8 @@ TwoCents::Application.routes.draw do
   resource :dashboard, only: [:show]
   resources :users, only: [:create]
 
-  resources :discussions, only: [:new, :show] do
+  resources :discussions, only: [:new, :show, :create] do
     resources :comments, only: [:create]
     resource :username, only: [:create]
   end
-
-  resources :content_discussion_forms, only: [:create]
 end
