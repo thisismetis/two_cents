@@ -13,3 +13,70 @@
 @import "bourbon";
 @import "bitters/bitters";
 @import "neat";
+
+#username {
+  right:0px;
+  padding: 10px;
+  color:red;
+  background-color: #FFF6E6;
+}
+
+#nav {
+  color: #f8f6f6;
+  height: 40px;
+  width:  100%;
+  background-color: #343434;
+  vertical-align: initial;
+
+  a {
+    font-size: 1.6em;
+  }
+
+  a:link {
+    color: #f8f6f6;
+    padding: 0px 50px;
+  }
+
+  a:visited {
+    color: #f8f6f6;
+  }
+
+  a:hover {
+    color: orange;
+  }
+}
+
+body {
+  background-color: #f8f6f6;
+}
+
+#my-discussions {
+  position:absolute;
+  left:0px;
+  width:50%;
+  height:80%;
+  padding: 10px;
+  background-color: #FFF6E6;
+
+  h3 {
+    font-style: italic;
+    color: OrangeRed;
+  }
+}
+
+#other-discussions {
+  position:absolute;
+  right:0px;
+  width:50%;
+  height:80%;
+  padding: 10px;
+  border-left-style: solid;
+  border-color: orange;
+  border-size: 2px;
+  background-color: #FFF6E6;
+
+  h3 {
+    font-style: italic;
+    color: OrangeRed;
+  }
+}

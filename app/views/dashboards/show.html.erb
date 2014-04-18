@@ -1,7 +1,18 @@
-<h2><%= current_user.username.capitalize %>'s Dashboard Page</h2>
+<div id="dashboard-wrapper">
 
-<div>
-  <h3>MY DISCUSSIONS</h3>
+  <div id="my-discussions">
+    <div>
+      <h3>MY DISCUSSIONS</h3>
+    </div>
+    <%= render @discussions %>
+  </div>
+
+  <div>
+    <div id="other-discussions">
+      <h3>MY TWO CENTS</h3>
+      (reusing render @discussions for development styling)
+    <%= render @discussions %> 
+    </div>
+  </div>
+
 </div>
-
-<%= render @discussions %>
