@@ -27,5 +27,4 @@ class Document < ActiveRecord::Base
       errors.add(:subject_custom_errors, "'#{subject_file_name}' is larger than 20MB.")
     end
   end
-
 end
