@@ -1,4 +1,4 @@
-class ContentDiscussionForm
+class DiscussionForm
   include ActiveModel::Model
 
   attr_accessor(

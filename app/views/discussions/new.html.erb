@@ -6,7 +6,7 @@
 
 <%= render "file_upload_error_messages", content: @content %>
 
-<%= form_for @content_discussion_form do |form| %>
+<%= form_for @discussion_form, url: discussions_path do |form| %>
   <div>
     <%= form.hidden_field :type, value: "Image" %>
   </div>
