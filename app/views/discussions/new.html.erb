@@ -4,11 +4,11 @@
 <button class="change-type" data-type="Video">Video Upload</button>
 <button class="change-type" data-type="Audio">Audio Upload</button>
 
-<%= render "file_upload_error_messages", content: @content %>
+<%= render "error_messages", target: @content %>
 
 <%= form_for @discussion_form, url: discussions_path do |form| %>
   <div>
-    <%= form.hidden_field :type, value: "Image" %>
+    <%= form.hidden_field :type, value: @discussion_form.type || "Image" %>
   </div>
   <div>
     <%= form.text_field :name, placeholder: "Discussion Name" %>

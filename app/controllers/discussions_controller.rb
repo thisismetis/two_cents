@@ -1,4 +1,5 @@
 class DiscussionsController < ApplicationController
+  respond_to :html
 
   def new
     @discussion_form = DiscussionForm.new
@@ -15,11 +16,8 @@ class DiscussionsController < ApplicationController
   def create
     @discussion_form = DiscussionForm.new(form_params)
     @content = @discussion_form.persist
-    if @content.errors.any?
-      render new
-    else
-      redirect_to @content.discussion
-    end
+    raise
+    respond_with @content, location: @content.discussion
   end
 
   private
