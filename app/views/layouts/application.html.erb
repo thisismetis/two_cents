@@ -16,14 +16,12 @@
       <% if signed_in? %>
         <%= link_to "Sign out", sign_out_path, method: :delete %>
         <%= current_user.username.capitalize %>'s Dashboard
-        
       <% end %>
     </div>
-      <div id="flash">
-        <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
-        <% end %>
-      </div>
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
     </div>
   </div>
   <%= yield %>
