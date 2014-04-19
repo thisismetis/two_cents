@@ -2,6 +2,9 @@ $(document).ready(function() {
   $('.change-type').click(function() {
     var type = $(this).data('type');
 
+    $('.change-type').css("color", "white");
+    $(this).css("color", "black");
+
     $('#discussion_form_type').attr('value', type);
 
     if(type === 'Code' || type === 'Video') {

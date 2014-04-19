@@ -1,0 +1,9 @@
+#new-discussion-form {
+  button {
+    @include button(pill, #ff9900);
+  }
+
+  #submit-button {
+    @include button(pill, #ff9900);
+  }
+}

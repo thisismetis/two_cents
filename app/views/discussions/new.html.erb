@@ -1,20 +1,34 @@
-<button class="change-type" data-type="Image">Image Upload</button>
-<button class="change-type" data-type="Document">Document Upload</button>
-<button class="change-type" data-type="Code">Code Upload</button>
-<button class="change-type" data-type="Video">Video Upload</button>
-<button class="change-type" data-type="Audio">Audio Upload</button>
+<div id="new-discussion-form">
+  <p>Please select a discussion type:</p>
 
-<%= render "error_messages", target: @content %>
+  <% @types.each do |type| %>
+    <% if type == @discussion_form.type %>
+      <button class="change-type", style="color: black;" data-type="<%= type %>">
+        <%= type %>
+      </button>
+    <% else %>
+      <button class="change-type" data-type="<%= type %>">
+        <%= type %>
+      </button>
+    <% end %>
+  <% end %>
 
-<%= form_for @discussion_form, url: discussions_path do |form| %>
-  <div>
-    <%= form.hidden_field :type, value: @discussion_form.type || "Image" %>
-  </div>
-  <div>
-    <%= form.text_field :name, placeholder: "Discussion Name" %>
-  </div>
-  <div id="content-form-subject">
-    <%= form.file_field :subject %>
-  </div>
-  <%= form.submit "Submit" %>
-<% end %>
+  <%= render "error_messages", target: @content %>
+
+  <%= form_for @discussion_form, url: discussions_path do |form| %>
+    <div>
+      <%= form.hidden_field :type, value: @discussion_form.type || "Image" %>
+    </div>
+    <div>
+      <%= form.text_field :name, placeholder: "Discussion Name" %>
+    </div>
+    <div id="content-form-subject">
+      <% if @discussion_form.type == "Video" || @discussion_form.type == "Code" %>
+        <%= form.text_field :subject, id: "text-upload-button" %>
+      <% else %>
+        <%= form.file_field :subject, id: "file-upload-button" %>
+      <% end %>
+    </div>
+    <%= form.submit "Submit", id: "submit-button" %>
+  <% end %>
+</div>
