@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417211453) do
+ActiveRecord::Schema.define(version: 20140419033640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "audios", force: true do |t|
+    t.string   "subject_file_name"
+    t.string   "subject_content_type"
+    t.integer  "subject_file_size"
+    t.datetime "subject_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", force: true do |t|
     t.string   "body",          null: false
