@@ -9,6 +9,18 @@ class Audio < ActiveRecord::Base
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY')
     }
 
-  validates_attachment_content_type :subject, content_type: /\Aaudio/
-  validates_attachment_file_name :subject, matches: [/mp3\Z/]
+  validates_attachment :subject, presence: true,
+    size: {
+      in: 0..61440.kilobytes,
+      message: 'must be under 60MB in size.'
+    },
+    file_name: {
+      matches: [
+        /mp3\Z/,
+        /ogg\Z/,
+        /wav\Z/
+      ],
+      message:
+        'needs to be one of these extensions: mp3, ogg, or wav.'
+    }
 end

@@ -8,6 +8,24 @@ class Document < ActiveRecord::Base
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY')
     }
 
-  validates_attachment_content_type :subject, content_type: /\Aapplication/
-  validates_attachment_file_name :subject, matches: [/pdf\Z/, /docx?\Z/]
+  validates_attachment :subject, presence: true,
+    size: {
+      in: 0..20480.kilobytes,
+      message: 'must be under 20MB in size.'
+    },
+    file_name: {
+      matches: [
+        /xlsx?\Z/,
+        /te?xt\Z/,
+        /rtf\Z/,
+        /pptx?\Z/,
+        /keynote\Z/,
+        /pages\Z/,
+        /numbers\Z/,
+        /pdf\Z/,
+        /docx?\Z/
+      ],
+      message:
+        'needs to be one of these extensions: pdf, doc(x), xls(x), t(e)xt, ppt(x), rtf, keynote, pages, or numbers.'
+    }
 end
