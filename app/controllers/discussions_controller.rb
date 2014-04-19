@@ -4,6 +4,7 @@ class DiscussionsController < ApplicationController
   def new
     @discussion_form = DiscussionForm.new
     @content = @discussion_form
+    @types = ["Image", "Document", "Code", "Video", "Audio"]
   end
 
   def show
@@ -16,6 +17,7 @@ class DiscussionsController < ApplicationController
   def create
     @discussion_form = DiscussionForm.new(form_params)
     @content = @discussion_form.persist
+    @types = ["Image", "Document", "Code", "Video", "Audio"]
     respond_with @content, location: @content.discussion
   end
 
