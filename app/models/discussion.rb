@@ -1,8 +1,10 @@
 class Discussion < ActiveRecord::Base
-  belongs_to :user
   before_create :generate_token
-  has_many :comments
+
+  belongs_to :user
   belongs_to :content, polymorphic: true
+
+  has_many :comments, dependent: :destroy
 
   validates :name, presence: true
   validates :user, presence: true

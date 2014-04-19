@@ -1,8 +1,15 @@
 <% if target.errors.full_messages.any? %>
   <div>
-    <h3>Your action  was unsucessful for the following <%= target.errors.full_messages.count %> reasons: </h3>
-    <% target.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+    <% if target.errors.include?(:subject) %>
+      <h3>Your action  was unsucessful for the following <%= target.errors.full_messages_for(:subject).count %> reasons: </h3>
+      <% target.errors.full_messages_for(:subject).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% else %>
+      <h3>Your action  was unsucessful for the following <%= target.errors.full_messages.count %> reasons: </h3>
+      <% target.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
     <% end %>
   </div>
 <% end %>
