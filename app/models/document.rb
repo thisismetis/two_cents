@@ -1,5 +1,6 @@
 class Document < ActiveRecord::Base
-  has_one :discussion, as: :content
+  has_one :discussion, as: :content, dependent: :destroy
+
   has_attached_file :subject,
     storage: :s3,
     bucket: ENV.fetch('S3_BUCKET_NAME'),

@@ -1,5 +1,5 @@
 class Audio < ActiveRecord::Base
-  has_one :discussion, as: :content
+  has_one :discussion, as: :content, dependent: :destroy
 
   has_attached_file :subject,
     storage: :s3,

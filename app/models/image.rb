@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  has_one :discussion, as: :content
+  has_one :discussion, as: :content, dependent: :destroy
 
   has_attached_file :subject,
     styles: { medium: '700x700>' },
