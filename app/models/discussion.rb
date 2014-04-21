@@ -15,15 +15,14 @@ class Discussion < ActiveRecord::Base
 
   def close
     update(closed: true)
-    save
   end
 
-  def self.all_open(user)
-    where(closed: false, user: user)
+  def self.open
+    where(closed: false)
   end
 
-  def self.all_closed(user)
-    where(closed: true, user: user)
+  def self.closed
+    where(closed: true)
   end
 
   def open?

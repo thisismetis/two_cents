@@ -21,9 +21,9 @@ class DiscussionsController < ApplicationController
     respond_with @content, location: @content.discussion
   end
 
-  def update
-    discussion = Discussion.find_by(token: params[:id])
-    current_user.discussion.close
+  def destroy
+    discussion = current_user.discussions.find_by(token: params[:id])
+    discussion.close
     redirect_to dashboard_path
   end
 

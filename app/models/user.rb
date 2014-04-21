@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
   validates :username, presence: true
 
   def owns?(discussion)
-    discussion_ids.include?(discussion.id)
+    discussion_ids.include? discussion.id
   end
 end
