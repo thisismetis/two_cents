@@ -16,35 +16,36 @@
 <div id="comments">
   <%= render @comments %>
 </div>
-You are commenting as:
-<% if signed_in? %>
-  <%= current_user.username %>
-<% else %>
-  <span id="comment-username"><%= current_user.username %></span>
-  <% if current_user.username.nil? %>
-    <div id="comment-username-form">
-      <%= form_for :guest,
-        url: discussion_username_path(@discussion),
-        remote: true do |form| %>
-          <%= form.text_field :username, value: current_user.username %>
-          <%= form.submit "Change" %>
-      <% end %>
-    </div>
-  <% end %>
-<% end %>
-<div id="comment-form">
-  <% if current_user.username %>
-    <%= form_for [@discussion, @comment], remote: true do |form| %>
-      <%= form.text_field :body, placeholder: "Enter your comment here" %>
-      <%= form.hidden_field :username, value: current_user.username %>
-      <%= form.submit "Comment" %>
+<% if @discussion.open? %>
+  You are commenting as:
+  <% if signed_in? %>
+    <%= current_user.username %>
+  <% else %>
+    <span id="comment-username"><%= current_user.username %></span>
+    <% if current_user.username.nil? %>
+      <div id="comment-username-form">
+        <%= form_for :guest,
+          url: discussion_username_path(@discussion),
+          remote: true do |form| %>
+            <%= form.text_field :username, value: current_user.username %>
+            <%= form.submit "Change" %>
+        <% end %>
+      </div>
     <% end %>
-
-    <%= button_to "Permanently Close Discussion", @discussion, method: :patch %>
-    
   <% end %>
-</div>
+  <div id="comment-form">
+    <% if current_user.username %>
+      <%= form_for [@discussion, @comment], remote: true do |form| %>
+        <%= form.text_field :body, placeholder: "Enter your comment here" %>
+        <%= form.hidden_field :username, value: current_user.username %>
+        <%= form.submit "Comment" %>
+      <% end %>
 
+      <%= button_to "Permanently Close Discussion", @discussion, method: :patch, confirm: 'Are you sure you want to permanently close this discussion?' %>
+
+    <% end %>
+  </div>
+<% end %>
 <div id="content">
-  <%= render @discussion.content %> 
+  <%= render @discussion.content %>
 </div>

@@ -26,6 +26,10 @@ class Discussion < ActiveRecord::Base
     where(closed: true, user: user)
   end
 
+  def open?
+    !closed
+  end
+
   private
 
   def generate_token
