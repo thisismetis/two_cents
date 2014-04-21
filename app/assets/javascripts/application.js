@@ -16,7 +16,4 @@
 //= require turbolinks
 //= require moment.min
 //= require content_form
-//= require twitter_share
-//= require facebook_share
 //= require_tree .
-
