@@ -23,7 +23,7 @@ class DiscussionsController < ApplicationController
 
   def update
     discussion = Discussion.find_by(token: params[:id])
-    discussion.close
+    current_user.discussion.close
     redirect_to dashboard_path
   end
 

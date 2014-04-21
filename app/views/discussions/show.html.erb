@@ -41,8 +41,13 @@
         <%= form.submit "Comment" %>
       <% end %>
 
-      <%= button_to "Permanently Close Discussion", @discussion, method: :patch, confirm: 'Are you sure you want to permanently close this discussion?' %>
-
+      <% if current_user.owns?(@discussion) %>
+        <%= button_to "Permanently Close Discussion",
+              @discussion,
+              method: :patch,
+              confirm: 'Are you sure you want to permanently close this discussion?'
+        %>
+      <% end %>
     <% end %>
   </div>
 <% end %>
