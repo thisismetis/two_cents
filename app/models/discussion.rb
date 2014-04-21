@@ -5,6 +5,7 @@ class Discussion < ActiveRecord::Base
   belongs_to :content, polymorphic: true
 
   has_many :comments, dependent: :destroy
+  has_many :collaborations, dependent: :destroy
 
   validates :name, presence: true
   validates :user, presence: true
