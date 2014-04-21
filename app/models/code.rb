@@ -3,7 +3,7 @@ class Code < ActiveRecord::Base
 
   validate :check_if_real_gist_url
 
-  def extract_gist_id
+  def gist_id
     subject.split("/").last
   end
 
