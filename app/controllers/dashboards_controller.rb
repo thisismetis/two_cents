@@ -2,7 +2,7 @@ class DashboardsController < ApplicationController
   before_action :authorize
 
   def show
-    @discussions = open_discussions
+    @open_discussions = open_discussions
     @closed_discussions = closed_discussions
   end
 
