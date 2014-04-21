@@ -3,5 +3,5 @@ class Collaboration < ActiveRecord::Base
   belongs_to :user
 
   validates :discussion_id,
-    uniqueness: { scope: :user_id}
+    uniqueness: { scope: :user_id }
 end
