@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20140421174859) do
     t.datetime "updated_at"
   end
 
+  create_table "collaborations", force: true do |t|
+    t.integer  "discussion_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "collaborations", ["discussion_id"], name: "index_collaborations_on_discussion_id", using: :btree
+  add_index "collaborations", ["user_id"], name: "index_collaborations_on_user_id", using: :btree
+
   create_table "comments", force: true do |t|
     t.string   "body",          null: false
     t.integer  "discussion_id", null: false

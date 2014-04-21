@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
   def show
     @open_discussions = open_discussions
     @closed_discussions = closed_discussions
+    @collaborations = current_user.collaborations
   end
 
   private

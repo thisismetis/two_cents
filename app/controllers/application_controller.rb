@@ -10,5 +10,8 @@ class ApplicationController < ActionController::Base
 
   def process_comment(comment)
     CommentPush.new(comment).push_comment_update
+    if current_user.can_collaborate?(comment.discussion)
+      current_user.collaborations.create(discussion: comment.discussion)
+    end
   end
 end
