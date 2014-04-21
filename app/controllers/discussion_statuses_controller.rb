@@ -1,4 +1,4 @@
-class StatusesController < ApplicationController
+class DiscussionStatusesController < ApplicationController
   def update
     discussion = current_user.discussions.find_by(token: params[:discussion_id])
     discussion.close

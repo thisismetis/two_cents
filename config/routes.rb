@@ -5,7 +5,7 @@ TwoCents::Application.routes.draw do
   resources :users, only: [:create]
 
   resources :discussions, only: [:new, :show, :create] do
-    resource :status, only: [:update]
+    resource :discussion_status, only: [:update]
     resources :comments, only: [:create]
     resource :username, only: [:create]
   end

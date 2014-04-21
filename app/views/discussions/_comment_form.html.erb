@@ -25,7 +25,7 @@ You are commenting as:
     <% if current_user.owns?(@discussion) %>
       <div id="close-discussion-button">
         <%= link_to "Permanently Close Discussion",
-              discussion_status_path(@discussion),
+             discussion_discussion_status_path(@discussion),
               method: :patch,
               confirm: 'Are you sure you want to permanently close this discussion?'
         %>
