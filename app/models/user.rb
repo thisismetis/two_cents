@@ -11,9 +11,7 @@ class User < ActiveRecord::Base
   end
 
   def can_collaborate?(discussion)
-    if owns?(discussion)
-      false
-    else
+    if !owns?(discussion)
       true
     end
   end
