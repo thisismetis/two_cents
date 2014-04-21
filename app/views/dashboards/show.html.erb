@@ -4,15 +4,25 @@
     <div>
       <h3>MY DISCUSSIONS</h3>
     </div>
-    <%= render @discussions %>
+    <div>
+      <h4>OPEN</h4>
+      <%= render @open_discussions %>
+    </div>
+    <div>
+      <h4>CLOSED</h4>
+      <%= render @closed_discussions %>
+    </div>
   </div>
 
   <div>
     <div id="other-discussions">
       <h3>MY TWO CENTS</h3>
-      (reusing render @discussions for development styling)
-    <%= render @discussions %> 
+      <div>
+        <h4>OPEN</h4>
+      </div>
+      <div>
+        <h4>CLOSED</h4>
+      </div>
     </div>
   </div>
-
 </div>
