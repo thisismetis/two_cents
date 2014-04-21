@@ -11,7 +11,7 @@ class Video < ActiveRecord::Base
 
   def check_if_youtube_video
     unless subject.include?("youtube.com")
-      errors.add(:subject, "must be a URL from YouTube") 
+      errors.add(:subject, "must be a URL from YouTube")
     end
   end
 end
