@@ -6,6 +6,6 @@ class Guest
   end
 
   def owns?(arg)
-
+    false
   end
 end
