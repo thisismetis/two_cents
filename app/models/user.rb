@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :discussions, dependent: :destroy
   has_many :collaborations
+  has_many :collaborated_discussions, through: :collaborations,
+    source: :discussion
 
   validates :username, presence: true
 
