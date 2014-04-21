@@ -10,7 +10,7 @@ class Code < ActiveRecord::Base
   private
 
   def check_if_real_gist_url
-    unless self.subject.split("/")[2] == "gist.github.com"
+    unless subject.split("/")[2] == "gist.github.com"
       errors.add(:subject, "must be a URL from gist.github.com")
     end
   end
