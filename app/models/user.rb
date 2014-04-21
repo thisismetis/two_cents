@@ -9,4 +9,12 @@ class User < ActiveRecord::Base
   def owns?(discussion)
     discussion_ids.include? discussion.id
   end
+
+  def can_collaborate?(discussion)
+    if owns?(discussion)
+      false
+    else
+      true
+    end
+  end
 end

@@ -5,7 +5,11 @@ class Guest
     @username = username
   end
 
-  def owns?(arg)
+  def owns?(discussion)
+    false
+  end
+
+  def can_collaborate?(discussion)
     false
   end
 end
