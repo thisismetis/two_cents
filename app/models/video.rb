@@ -3,7 +3,7 @@ class Video < ActiveRecord::Base
 
   validate :check_if_youtube_video
 
-  def youtube_embed_url
+  def youtube_video_id
     subject.split("=")[1]
   end
 
