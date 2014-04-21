@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def process_comment(comment)
     CommentPush.new(comment).push_comment_update
-    unless current_user.owns?(comment.discussion)
+    unless current_user.owns?(comment.discussion) || signed_out?
       current_user.collaborations.create(discussion: comment.discussion)
     end
   end

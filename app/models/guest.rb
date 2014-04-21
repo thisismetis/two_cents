@@ -4,4 +4,8 @@ class Guest
   def initialize(username="")
     @username = username
   end
+
+  def owns?(arg)
+
+  end
 end
