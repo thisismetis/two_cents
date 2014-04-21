@@ -13,6 +13,19 @@ class Discussion < ActiveRecord::Base
     token
   end
 
+  def close
+    update(closed: true)
+    save
+  end
+
+  def self.all_open(user)
+    where(closed: false, user: user)
+  end
+
+  def self.all_closed(user)
+    where(closed: true, user: user)
+  end
+
   private
 
   def generate_token
@@ -21,4 +34,5 @@ class Discussion < ActiveRecord::Base
       self.token = SecureRandom.hex(8)
     end
   end
+
 end

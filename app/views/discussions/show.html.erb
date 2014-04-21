@@ -39,6 +39,9 @@ You are commenting as:
       <%= form.hidden_field :username, value: current_user.username %>
       <%= form.submit "Comment" %>
     <% end %>
+
+    <%= button_to "Permanently Close Discussion", @discussion, method: :patch %>
+    
   <% end %>
 </div>
 
