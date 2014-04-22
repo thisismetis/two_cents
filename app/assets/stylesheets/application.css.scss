@@ -47,17 +47,12 @@
   }
 }
 
-body {
-  background-color: #f8f6f6;
-}
-
 #my-discussions {
   position:absolute;
   left:0px;
   width:50%;
   height:80%;
   padding: 10px;
-  background-color: #FFF6E6;
 
   h3 {
     font-style: italic;
@@ -74,10 +69,44 @@ body {
   border-left-style: solid;
   border-color: orange;
   border-size: 2px;
-  background-color: #FFF6E6;
 
   h3 {
     font-style: italic;
     color: OrangeRed;
   }
+}
+
+#discussion-name {
+  display: block;
+  align: left;
+  padding-top: 2.5%;
+  padding-left: 2.5%;
+}
+
+#content-wrapper {
+  display: block;
+  float: left;
+  width: 60%;
+  padding: 5% 2.5% 5% 2.5%;
+  border-right-style: solid;
+  border-size: 1px;
+  border-color: black;
+
+  #discussion-audio {
+    audio {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+#comments-wrapper {
+  display: block;
+  float: left;
+  width: 40%;
+  padding: 5% 2.5% 5% 2.5%;
+}
+
+.comment-author {
+  font-weight: bold;
 }
