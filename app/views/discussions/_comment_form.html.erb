@@ -1,14 +1,14 @@
 You are commenting as:
 <% if signed_in? %>
-  <%= current_user.username %>
+  <%= current_user.username.titleize %>
 <% else %>
-  <span id="comment-username"><%= current_user.username %></span>
+  <span id="comment-username"><%= current_user.username.titleize %></span>
   <% if current_user.username.nil? %>
     <div id="comment-username-form">
       <%= form_for :guest,
         url: discussion_username_path(@discussion),
         remote: true do |form| %>
-          <%= form.text_field :username, value: current_user.username %>
+          <%= form.text_field :username, value: current_user.username.titleize %>
           <%= form.submit "Change" %>
       <% end %>
     </div>
