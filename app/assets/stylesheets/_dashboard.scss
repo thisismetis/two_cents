@@ -1,0 +1,89 @@
+::-webkit-scrollbar {
+width: 12px;
+}
+
+::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+#dashboard-wrapper {
+  @include clearfix;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 30px;
+  position:relative;
+
+  #my-discussions {
+    @include span-columns(6);
+
+    .discussion-listing {
+      font-family: 'Roboto', 'sans-serif';
+    }
+
+    h4 {
+      font-family: 'Roboto', 'sans-serif';
+      font-style: italic;
+    }
+
+    h3 {
+      font-family: 'Roboto', 'sans-serif';
+      color: OrangeRed;
+    }
+
+    #my-open-discussions {
+      height: 400px;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 3px;
+    }
+
+    #my-closed-discussions {
+      height: 400px;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 3px;
+    }
+  }
+
+  #other-discussions {
+    @include span-columns(6);
+
+    .discussion-listing {
+      font-family: 'Roboto', 'sans-serif';
+    }
+
+    h4 {
+      font-family: 'Roboto', 'sans-serif';
+      font-style: italic;
+    }
+
+    h3 {
+      font-family: 'Roboto', 'sans-serif';
+      color: OrangeRed;
+    }
+
+    #other-open-discussions {
+      height: 400px;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 3px;
+    }
+
+    #other-closed-discussions {
+      height: 400px;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 3px;
+    }
+  }
+}
