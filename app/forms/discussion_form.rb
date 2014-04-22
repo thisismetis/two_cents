@@ -1,12 +1,12 @@
 class DiscussionForm
   include ActiveModel::Model
 
-  attr_accessor(
-    :name,
-    :type,
-    :subject,
-    :user
-  )
+  attr_accessor :name, :type, :subject, :user
+
+  validates :name, presence: true
+  validates :type, presence: true
+  validates :subject, presence: true
+  validates :user, presence: true
 
   def persist
     content = content_type.create(subject: subject)

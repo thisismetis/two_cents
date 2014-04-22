@@ -1,9 +1,8 @@
 class DiscussionsController < ApplicationController
-  respond_to :html
+  before_action :authorize, only: [:new, :create]
 
   def new
     @discussion_form = DiscussionForm.new
-    @content = @discussion_form
     @types = ["Image", "Document", "Code", "Video", "Audio"]
   end
 
@@ -16,9 +15,13 @@ class DiscussionsController < ApplicationController
 
   def create
     @discussion_form = DiscussionForm.new(form_params)
-    @content = @discussion_form.persist
     @types = ["Image", "Document", "Code", "Video", "Audio"]
-    respond_with @content, location: @content.discussion
+    if @discussion_form.valid?
+      content = @discussion_form.persist
+      redirect_to content.discussion
+    else
+      render :new
+    end
   end
 
   private
