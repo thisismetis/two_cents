@@ -16,7 +16,7 @@ You are commenting as:
 <div id="comment-form">
   <% if current_user.username %>
     <%= form_for [@discussion, @comment], remote: true do |form| %>
-      <%= form.text_field :body, placeholder: "Enter your comment here" %>
+      <%= form.text_field :body, placeholder: "Enter your message here" %>
       <%= form.hidden_field :username, value: current_user.username %>
       <%= form.submit "Comment" %>
     <% end %>

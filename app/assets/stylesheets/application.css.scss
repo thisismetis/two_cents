@@ -82,6 +82,7 @@ body {
   display: block;
   float: left;
   width: 60%;
+  height: 800px;
   padding: 5% 2.5% 5% 2.5%;
   border-right-style: solid;
   border-size: 1px;
@@ -106,7 +107,9 @@ body {
   height: 400px;
   overflow: -moz-scrollbars-vertical;
   overflow: scroll;
+  overflow-x: hidden;
   padding: 3px;
+  margin-right: 20px;
 }
 
 .comment-author {
