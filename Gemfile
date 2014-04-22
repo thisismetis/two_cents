@@ -27,3 +27,6 @@ group :development do
   gem 'dotenv-rails'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
