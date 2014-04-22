@@ -51,7 +51,7 @@
   }
 }
 
-#logo-image {
+#left-side-of-landing {
   @include outer_container;
   float: left;
   width:60%;
@@ -73,6 +73,9 @@
   margin: 5px, 0px, 0px, 0px;
 }
 
+#signup-form {
+  margin-top: 50px;
+}
 
 #my-discussions {
   position:absolute;

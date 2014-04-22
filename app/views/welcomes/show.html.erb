@@ -1,7 +1,8 @@
 <div id='landing-page-wrapper'>
-  <div id='logo-image'>
-    <%= image_tag("2centslogo.png", alt: "2 cents logo") %>
-    <br>
+  <div id='left-side-of-landing'>
+    <div id='logo-image'>
+      <%= image_tag("2centslogo.png", alt: "2 cents logo") %>
+    </div>
     <div id='site-summary'>
       Welcome to two cents, where your thoughts are as valuable as the people you send the link to... and that's it!
     </div>
@@ -11,9 +12,6 @@
       <div id='signin-form'>
         <%= render 'sign_in' %>
       </div>
-      <br>
-      <br>
-      <br>
       <div id='signup-form'>
         <%= render 'sign_up' %>
       </div>
