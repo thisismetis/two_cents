@@ -81,3 +81,27 @@ body {
     color: OrangeRed;
   }
 }
+
+.content {
+  align: left;
+  width: 50%;
+
+  #discussion-image {
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  #discussion-audio {
+    audio {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.comments {
+  align: right;
+  width: 50%;
+}
