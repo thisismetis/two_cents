@@ -29,6 +29,10 @@
   background-color: #343434;
   vertical-align: initial;
 
+  img {
+    height: 35px;
+  }
+
   a {
     font-size: 1.6em;
   }
@@ -45,6 +49,32 @@
   a:hover {
     color: orange;
   }
+}
+
+#left-side-of-landing {
+  @include outer_container;
+  float: left;
+  width:60%;
+  padding: 4%;
+}
+
+#site-summary {
+  float: left;
+  width:60%;
+  font-family: 'Roboto', 'sans-serif';
+  font-variant:small-caps;
+  font-size:30px;
+}  
+
+#log-in-sign-up {
+  float: right;
+  width:40%;
+  padding: 7%;
+  margin: 5px, 0px, 0px, 0px;
+}
+
+#signup-form {
+  margin-top: 50px;
 }
 
 #my-discussions {

@@ -1,15 +1,20 @@
 <div id='landing-page-wrapper'>
-  <div id='site-summary'>
-    Welcome to two cents, where your thoughts are as valuable as the people you send the link to... and that's it!
-  </div>
-
-  <div id='signup-signin-forms'>
-    <div id='signin-form'>
-      <%= render 'sign_in' %>
+  <div id='left-side-of-landing'>
+    <div id='logo-image'>
+      <%= image_tag("2centslogo.png", alt: "2 cents logo") %>
     </div>
-
-    <div id='signup-form'>
-      <%= render 'sign_up' %>
+    <div id='site-summary'>
+      Welcome to two cents, where your thoughts are as valuable as the people you send the link to... and that's it!
+    </div>
+  </div>
+  <div id="log-in-sign-up">
+    <div id='signup-signin-forms'>
+      <div id='signin-form'>
+        <%= render 'sign_in' %>
+      </div>
+      <div id='signup-form'>
+        <%= render 'sign_up' %>
+      </div>
     </div>
   </div>
 </div>
