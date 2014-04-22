@@ -1,0 +1,32 @@
+#landing-page-wrapper {
+  padding-left: 250px;
+  padding-right: 250px;
+
+  #landing-story {
+    float: left;
+    width: 60%;
+    padding: 4%;
+
+    #site-summary {
+      float: left;
+      width: 60%;
+      font-family: 'Roboto', 'sans-serif';
+      font-variant: small-caps;
+      font-size: 30px;
+    }
+  }
+
+  #log-in-sign-up {
+    float: right;
+    width: 40%;
+    padding: 7%;
+    margin: 5px, 0px, 0px, 0px;
+
+    #signup-form {
+      margin-top: 50px;
+    }
+  }
+}
+
+
+

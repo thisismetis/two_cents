@@ -15,6 +15,7 @@
 @import "neat";
 @import "new_discussion_form";
 @import "dashboard";
+@import "landing_page";
 
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
@@ -42,82 +43,11 @@ body {
   background-color: #343434;
   vertical-align: initial;
 
-  img {
-    height: 35px;
-  }
-
-  a {
-    font-size: 1.6em;
-  }
-
-  a:link {
-    color: #f8f6f6;
-    padding: 0px 50px;
-  }
-
-  a:visited {
-    color: #f8f6f6;
-  }
-
-  a:hover {
-    color: orange;
-  }
-}
-
-#left-side-of-landing {
-  @include outer_container;
-  float: left;
-  width:60%;
-  padding: 4%;
-}
-
-#site-summary {
-  float: left;
-  width:60%;
-  font-family: 'Roboto', 'sans-serif';
-  font-variant:small-caps;
-  font-size:30px;
-}
-
-#log-in-sign-up {
-  float: right;
-  width:40%;
-  padding: 7%;
-  margin: 5px, 0px, 0px, 0px;
-}
-
-#signup-form {
-  margin-top: 50px;
-}
-
-#my-discussions {
-  position:absolute;
-  left:0px;
-  width:50%;
-  height:80%;
-  padding: 10px;
-
-  h3 {
-    font-style: italic;
-    color: OrangeRed;
-  }
-}
-
-#other-discussions {
-  position:absolute;
-  right:0px;
-  width:50%;
-  height:80%;
-  padding: 10px;
-  border-left-style: solid;
-  border-color: orange;
-  border-size: 2px;
-
-  h3 {
-    font-style: italic;
-    color: OrangeRed;
-
   ul li {
+    img {
+      height: 35px;
+    }
+
     a {
       float: left;
       font-weight: 200;
@@ -143,14 +73,6 @@ body {
       }
     }
   }
-}
-
-#discussion-name {
-  font-family: 'Roboto', 'sans-serif';
-  display: block;
-  align: left;
-  padding-top: 2.5%;
-  padding-left: 2.5%;
 }
 
 #content-wrapper {
@@ -179,6 +101,7 @@ body {
   width: 40%;
   padding-left: 10px;
 }
+
 #comments {
   height: 400px;
   overflow: -moz-scrollbars-vertical;
@@ -193,4 +116,6 @@ body {
   font-family: 'Roboto', 'sans-serif';
 }
 
-.line-numbers {width: 5%;}
+.line-numbers {
+  width: 15%;
+}
