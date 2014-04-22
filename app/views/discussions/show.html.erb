@@ -12,13 +12,21 @@
   });
 </script>
 
-<h2><%= @discussion.name %></h2>
-<div id="comments">
-  <%= render @comments %>
+<div id="discussion-name">
+  <h2><%= @discussion.name %></h2>
 </div>
-<% if @discussion.open? %>
-  <%= render 'comment_form' %>
-<% end %>
-<div id="content">
-  <%= render @discussion.content %>
+
+<div id="content-wrapper">
+  <div id="content">
+    <%= render @discussion.content %>
+  </div>
+</div>
+
+<div id="comments-wrapper">
+  <div id="comments">
+    <%= render @comments %>
+  </div>
+  <% if @discussion.open? %>
+    <%= render 'comment_form' %>
+  <% end %>
 </div>

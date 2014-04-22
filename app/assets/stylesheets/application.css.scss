@@ -82,16 +82,21 @@ body {
   }
 }
 
-.content {
+#discussion-name {
+  display: block;
   align: left;
-  width: 50%;
+  padding-top: 2.5%;
+  padding-left: 2.5%;
+}
 
-  #discussion-image {
-    img {
-      width: 50%;
-      height: 50%;
-    }
-  }
+#content-wrapper {
+  display: block;
+  float: left;
+  width: 60%;
+  padding: 5% 2.5% 5% 2.5%;
+  border-right-style: solid;
+  border-size: 1px;
+  border-color: black;
 
   #discussion-audio {
     audio {
@@ -101,7 +106,9 @@ body {
   }
 }
 
-.comments {
-  align: right;
-  width: 50%;
+#comments-wrapper {
+  display: block;
+  float: left;
+  width: 40%;
+  padding: 5% 2.5% 5% 2.5%;
 }
