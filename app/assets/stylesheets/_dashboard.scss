@@ -1,0 +1,33 @@
+#dashboard-wrapper {
+  #my-discussions {
+    #my-open-discussions {
+      height: 400px;
+      overflow: -moz-scrollbars-vertical;
+      overflow: scroll;
+      padding: 3px;
+    }
+
+    #my-closed-discussions {
+      height: 400px;
+      overflow: -moz-scrollbars-vertical;
+      overflow: scroll;
+      padding: 3px;
+    }
+  }
+
+  #other-discussions {
+    #other-open-discussions {
+      height: 400px;
+      overflow: -moz-scrollbars-vertical;
+      overflow: scroll;
+      padding: 3px;
+    }
+
+    #other-closed-discussions {
+      height: 400px;
+      overflow: -moz-scrollbars-vertical;
+      overflow: scroll;
+      padding: 3px;
+    }
+  }
+}

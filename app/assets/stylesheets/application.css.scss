@@ -14,8 +14,17 @@
 @import "bitters/bitters";
 @import "neat";
 @import "new_discussion_form";
+@import "dashboard";
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  margin: 0;
+  padding: 0;
+}
 
 #username {
+  font-family: 'Roboto', 'sans-serif';
   right:0px;
   padding: 10px;
   color:red;
@@ -23,27 +32,40 @@
 }
 
 #nav {
-  color: #f8f6f6;
-  height: 40px;
-  width:  100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 50px;
   background-color: #343434;
-  vertical-align: initial;
 
-  a {
-    font-size: 1.6em;
-  }
+  ul li {
+    a {
+      float: left;
+      font-weight: 200;
+      color: orange;
+      font-size: 22px;
+      border-left: 1px solid orange;
+      display: block;
+      padding: 5px 10px;
+      line-height: 40px;
+      height: 50px;
 
-  a:link {
-    color: #f8f6f6;
-    padding: 0px 50px;
-  }
+      &:first-child {
+        border-left: 0px;
+      }
 
-  a:visited {
-    color: #f8f6f6;
-  }
+      &:last-child {
+        border-right: 1px solid orange;
+      }
 
-  a:hover {
-    color: orange;
+      &:hover {
+        color: white;
+        background-color: orange;
+      }
+    }
   }
 }
 
@@ -54,8 +76,13 @@
   height:80%;
   padding: 10px;
 
-  h3 {
+  h4 {
+    font-family: 'Roboto', 'sans-serif';
     font-style: italic;
+  }
+
+  h3 {
+    font-family: 'Roboto', 'sans-serif';
     color: OrangeRed;
   }
 }
@@ -66,17 +93,26 @@
   width:50%;
   height:80%;
   padding: 10px;
-  border-left-style: solid;
   border-color: orange;
   border-size: 2px;
 
-  h3 {
+  h4 {
+    font-family: 'Roboto', 'sans-serif';
     font-style: italic;
+  }
+
+  h3 {
+    font-family: 'Roboto', 'sans-serif';
     color: OrangeRed;
   }
 }
 
+.discussion-listing {
+  font-family: 'Roboto', 'sans-serif';
+}
+
 #discussion-name {
+  font-family: 'Roboto', 'sans-serif';
   display: block;
   align: left;
   padding-top: 2.5%;
@@ -84,6 +120,7 @@
 }
 
 #content-wrapper {
+  font-family: 'Roboto', 'sans-serif';
   display: block;
   float: left;
   width: 60%;
@@ -101,14 +138,22 @@
 }
 
 #comments-wrapper {
+  font-family: 'Roboto', 'sans-serif';
   display: block;
   float: left;
   width: 40%;
-  padding: 5% 2.5% 5% 2.5%;
+  padding-left: 10px;
+}
+#comments {
+  height: 400px;
+  overflow: -moz-scrollbars-vertical;
+  overflow: scroll;
+  padding: 3px;
 }
 
 .comment-author {
   font-weight: bold;
+  font-family: 'Roboto', 'sans-serif';
 }
 
 .line-numbers {width: 5%;}

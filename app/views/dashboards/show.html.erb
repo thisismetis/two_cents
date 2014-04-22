@@ -4,12 +4,12 @@
     <div>
       <h3>MY DISCUSSIONS</h3>
     </div>
-    <div>
-      <h4>OPEN</h4>
+    <h4>OPEN</h4>
+    <div id="my-open-discussions">
       <%= render @open_discussions %>
     </div>
-    <div>
-      <h4>CLOSED</h4>
+    <h4>CLOSED</h4>
+    <div id="my-closed-discussions">
       <%= render @closed_discussions %>
     </div>
   </div>
@@ -17,12 +17,12 @@
   <div>
     <div id="other-discussions">
       <h3>MY TWO CENTS</h3>
-      <div>
-        <h4>OPEN</h4>
+      <h4>OPEN</h4>
+      <div id="other-open-discussions">
         <%= render @open_collaborations %>
       </div>
-      <div>
-        <h4>CLOSED</h4>
+      <h4>CLOSED</h4>
+      <div id="other-closed-discussions">
         <%= render @closed_collaborations %>
       </div>
     </div>
