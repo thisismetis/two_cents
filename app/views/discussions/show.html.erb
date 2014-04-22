@@ -9,7 +9,15 @@
     template += comment.username;
     template += " said: ";
     template += "\<\/span\>"
-    template += comment.body;
+    var MAP = { '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'};
+    var newComment = comment.body.replace(comment.body ? /[&<>'"]/g : /[&<>]/g, function(c) {
+            return MAP[c];
+    });
+    template += newComment;
     template += " ";
     template += moment(comment.created_at).fromNow();
     template += "\<br\>"
