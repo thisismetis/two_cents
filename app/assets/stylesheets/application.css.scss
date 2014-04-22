@@ -69,48 +69,6 @@ body {
   }
 }
 
-#my-discussions {
-  position:absolute;
-  left:0px;
-  width:50%;
-  height:80%;
-  padding: 10px;
-
-  h4 {
-    font-family: 'Roboto', 'sans-serif';
-    font-style: italic;
-  }
-
-  h3 {
-    font-family: 'Roboto', 'sans-serif';
-    color: OrangeRed;
-  }
-}
-
-#other-discussions {
-  position:absolute;
-  right:0px;
-  width:50%;
-  height:80%;
-  padding: 10px;
-  border-color: orange;
-  border-size: 2px;
-
-  h4 {
-    font-family: 'Roboto', 'sans-serif';
-    font-style: italic;
-  }
-
-  h3 {
-    font-family: 'Roboto', 'sans-serif';
-    color: OrangeRed;
-  }
-}
-
-.discussion-listing {
-  font-family: 'Roboto', 'sans-serif';
-}
-
 #discussion-name {
   font-family: 'Roboto', 'sans-serif';
   display: block;
