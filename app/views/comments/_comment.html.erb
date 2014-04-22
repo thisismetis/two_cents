@@ -1,6 +1,6 @@
 <%= div_for comment do %>
   <span class="comment-author">
-    <strong><%= comment.username.titleize %> said:</strong>
+    <%= comment.username.titleize %> said:
   </span>
   <span class="comment-body">
     <%= comment.body %>

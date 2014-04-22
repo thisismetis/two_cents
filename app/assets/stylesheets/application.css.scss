@@ -107,6 +107,6 @@
   padding: 5% 2.5% 5% 2.5%;
 }
 
-#close-discussion-button {
-  @include button(simple);
+.comment-author {
+  font-weight: bold;
 }

@@ -2,8 +2,10 @@
   var pusher = new Pusher('<%= ENV.fetch('PUSHER_KEY') %>');
   var channel = pusher.subscribe('comments_updater');
   channel.bind('discussion_<%= @discussion.token %>', function(comment) {
-    template = comment.username;
+    template = "\<span class='comment-author'\>"
+    template += comment.username;
     template += " said: ";
+    template += "\<\/span\>"
     template += comment.body;
     template += " ";
     template += moment(comment.created_at).fromNow();
