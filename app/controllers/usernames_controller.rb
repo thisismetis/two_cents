@@ -2,6 +2,7 @@ class UsernamesController < ApplicationController
   def create
     discussion = find_discussion
     @username = set_guest_username
+    redirect_to discussion
   end
 
   private
