@@ -13,9 +13,10 @@
                 '<': '&lt;',
                 '>': '&gt;',
                 '"': '&quot;',
-                "'": '&#39;'};
-    var newComment = comment.body.replace(comment.body ? /[&<>'"]/g : /[&<>]/g, function(c) {
-            return MAP[c];
+                "'": '&#39;'
+              };
+    var newComment = comment.body.replace(/[&<>'"]/g, function(character) {
+      return MAP[character];
     });
     template += newComment;
     template += " ";
