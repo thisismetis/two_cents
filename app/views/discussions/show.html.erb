@@ -15,8 +15,8 @@
                 '"': '&quot;',
                 "'": '&#39;'
               };
-    var newComment = comment.body.replace(/[&<>'"]/g, function(body) {
-      return MAP[body];
+    var newComment = comment.body.replace(/[&<>'"]/g, function(character) {
+      return MAP[character];
     });
     template += newComment;
     template += " ";
